@@ -22,7 +22,7 @@ jobs:
         ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=focal BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
 
      - name: xz
-       run: xz -9kv output/images/*.img
+       run: sudo xz -9kv /home/runner/work/phicomm-n1/phicomm-n1/output/images/*.img
      
      - name: upload to artifact
        uses: actions/upload-artifact@main
