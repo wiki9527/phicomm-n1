@@ -22,7 +22,7 @@ jobs:
         ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=focal BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
 
      - name: xz
-       run: sudo xz -9kv /home/runner/work/phicomm-n1/phicomm-n1/output/images/*.img && ls -alh /home/runner/work/phicomm-n1/phicomm-n1/output/images/
+       run: pwd && sudo xz -9kv /home/runner/work/phicomm-n1/phicomm-n1/output/images/*.img && ls -alh /home/runner/work/phicomm-n1/phicomm-n1/output/images/
      
      - name: SSH connection to Actions
        uses: P3TERX/ssh2actions@v1.0.0
@@ -32,5 +32,5 @@ jobs:
        uses: actions/upload-artifact@main
        with:
          name: armbian
-         path: phicomm-n1/output/images/*.img.xz
+         path: /home/runner/work/phicomm-n1/phicomm-n1/output/images/*.img.xz
 
