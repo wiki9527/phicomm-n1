@@ -19,7 +19,7 @@ jobs:
        if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')     
      - name: Build image
        run: |
-        ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=focal BUILD_MINIMAL=no BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
+        ./compile.sh BOARD=arm-64 BRANCH=current RELEASE=bionic BUILD_MINIMAL=yes BUILD_DESKTOP=no KERNEL_ONLY=no KERNEL_CONFIGURE=no COMPRESS_OUTPUTIMAGE=sha,img
 
      - name: xz
        run: pwd && sudo xz -9kv /home/runner/work/phicomm-n1/phicomm-n1/output/images/*.img && ls -alh /home/runner/work/phicomm-n1/phicomm-n1/output/images/
