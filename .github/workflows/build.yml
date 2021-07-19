@@ -1,4 +1,4 @@
-name: Build Docker image
+name: Build image
 # This workflow is triggered 1st, 16th and 31st
 on:
   repository_dispatch:
