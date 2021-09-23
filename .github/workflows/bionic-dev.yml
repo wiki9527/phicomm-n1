@@ -1,4 +1,4 @@
-name: Build bionic
+name: Build bionic-dev
 # This workflow is triggered 1st, 16th and 31st
 on:
   repository_dispatch:
